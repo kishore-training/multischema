@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Welcome </title>
+</head>
+<body>
+<div class="container my-5" >
+<h1 >Welcome to Hospital Appointment multischema Application!</h1>
+<img src="static/building.jpg"  class="img-rounded" alt="Hospital" height="200">
+<br>
+<br>
+    <div style="padding-right: 500px" >
+        <p style="animation: ease-in; font-family: 'Californian FB'" > This is a demo of multischema hospital management application on cloud. A single instance of this application
+            can handle multiple customers/tenants/hospitals using seperate database for each tenant. Customers will have to complete registration and provide details of their tenant admin user</p>
+        <br>
+        <p style="font-family: 'Californian FB'"> This application enables entering and viewing the appointments of doctors working in a hospital.</p></div>
+
+    <br>
+<p >Click on Register if you are a new user <a style="color: blue" th:href="@{/register}">REGISTER</a></p>
+<p >Click on Login if you are an existing user<a style="color: darkgreen" th:href="@{/login}">LOGIN</a> </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/shards.min.css">
+</head>
+<body>
+<div th:switch="${appointments}" class="container my-5">
+    <h2 class="mb-6" > Appointment Management Solution For Hospitals </h2>
+    <br>
+    <div class="float-md-right my-7 px-5">
+        <label> Hello <span th:text="${user}"/></label>
+        <br>
+        <a href="/logout" style="color: red"> <i class="fas fa-sign-out-alt"></i>Logout</a>
+    </div>
+    <img src="../static/building.jpg"  class="img-rounded px-5" alt="Hospital"  height="200">
+    <br>
+    <div class="row">
+        <div class="col-md-11">
+            <h2 th:case="null">No Appointments yet!</h2>
+            <div th:case="*">
+                <h3 class="my-5">Appointments</h3>
+                <table class="table table-striped table-responsive-md">
+                    <thead>
+                    <tr>
+                        <th>Appointment Date</th>
+                        <th>Patient Name</th>
+                        <th>Patient Mobile</th>
+                        <th>Doctor Name</th>
+
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="appointment : ${appointments}">
+                        <td th:text="${appointment.appointmentDateTime}"></td>
+
+                        <td th:text="${appointment.patientName}"></td>
+                        <td th:text="${appointment.patientMobileNumber}"></td>
+                        <td th:text="${doctor}"></td>
+
+
+
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="my-5"><a th:href="@{/appointment/addAppointment(doctor=${doctor})}" ><i class="far fa-calendar-alt" style="color: blue"></i> Add Appointment</a></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

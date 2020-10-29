@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Login </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/shards.min.css">
+</head>
+<body>
+<div class="container p-3 my-3" >
+    <h2 class="mb-6"> Appointment Management Solution For Hospitals </h2>
+    <img src="../static/building.jpg" class="img-rounded" alt="Hospital" height="200">
+    <br>
+    <br>
+    <h3 class="mb-6">Login</h3>
+    <div class="p-3 row col-md-12">
+
+        <form action="#" th:action="@{/login}" method="post">
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="hospital" class="col-form-label">Hospital</label>
+                    <input type="text"  class="form-control" name="hospital" id="hospital" placeholder="Hospital">
+
+                </div>
+
+
+                <div class="form-group col-md-4">
+                    <label for="username" class="col-form-label">User Name</label>
+                    <input type="text"  class="form-control" name="username" id="username" placeholder="User Name">
+
+                </div>
+
+
+                <div class="form-group col-md-4">
+                    <label for="password" class="col-form-label">Password</label>
+                    <input type="text"  class="form-control" name="password" id="password" placeholder="Password">
+
+                </div>
+            </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-1">
+                    <input type="submit" class="btn btn-primary" value="Login">
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>
